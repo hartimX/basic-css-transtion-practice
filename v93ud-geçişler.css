@@ -1,0 +1,59 @@
+
+
+/* Değişmeden önceki ilk hali */
+
+.circle{
+    width:300px;
+    height:300px;
+    background-color:blue;
+    border-radius: 50%;        
+    /*transition: 1s;    (değişimin süresini belirtir) */
+    /*transition: background-color 3s 2s; (3s değişimin süresini--2s değişimin başlama süresini belirtir,şekil hemen değişir)*/
+    transition: background-color 1s, border-radius 2s /*(renk değişimi 2s--şekil değişimi 1s sürer) */
+}
+
+/* Değiştikten sonraki hali */
+
+.circle:hover{
+    background-color:magenta;
+    border-radius: 20%;
+}
+
+       /* 2.KISIM HAREKETLİ GEÇİŞ */
+
+section div{
+    height: 100px;
+    width: 100px;
+    background-color: blue;
+    margin: 20px 100px;
+    transition: margin-left 3s, border-radius 3s;
+}
+
+
+/* değişim sonrası */
+
+section:hover div{
+    margin-left: 1000px;
+    background-color: rgb(33, 221, 49);
+    border-radius: 30%;
+}
+
+
+/* hareketlilerin her birine ayrı hareket kabiliyeti verme */
+
+div:nth-of-type(1){
+    transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+
+div:nth-of-type(2){
+    transition-timing-function: ease-out;
+}
+
+div:nth-of-type(3){
+    transition-timing-function:cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+div:nth-of-type(4){
+    transition-timing-function: ease-in;
+}
